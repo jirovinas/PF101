@@ -83,7 +83,7 @@ class PremiumFoodItem(DrinkItem):
 pizza = FoodItem("Pizza", 100, "Large")
 pizza.cook_food()
 pizza.display_details()
-
+hagsxxh = ''
 order1 = Order("Jiro")
 order1.add_item(pizza)
 order1.calculate_total()
