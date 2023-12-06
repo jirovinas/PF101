@@ -5,7 +5,7 @@ class MenuItem:
         self.__description = description
 
     def display_details(self):
-        print(f"Item name: {self.get_description()} \nPrice: ${self.get_price()} \nDescription: {self.get_description()}\n")
+        print(f"Item name: {self.get_item_name()} \nPrice: ${self.get_price()} \nDescription: {self.get_description()}\n")
 
     def get_price(self):
         return self.__price
@@ -19,22 +19,21 @@ class MenuItem:
     def update_price(self, item_name = None, price = None, description = None):
         if item_name is not None:
             self.__item_name = item_name
-            msg += f"Item Name Updated to {item_name}"
+            message += f"Item Name Updated to {item_name}"
 
         if price is not None:
             self.__price = price
-            msg += f"Price Updated to {price}"
+            message += f"Price Updated to {price}" 
 
         if description is not None:
             self.__description = description
-            msg += f"Description Updated to {description}"
+            message += f"Description Updated to {description}"
 
-    msg = " "
-    print(msg)
+    message = " "
+    print(message)
 
 class Order:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
         self.order_list = []
 
     def add_item(self, order_name):
@@ -81,8 +80,8 @@ class PremiumFoodItem(DrinkItem):
         super().__init__(item_name, price, description, pour)
 
 pizza = FoodItem("Pizza", 100, "Large")
-pizza.cook_food()
+pizza.cook_food()  
 pizza.display_details()
-order1 = Order("Jiro")
+order1 = Order()
 order1.add_item(pizza)
 order1.calculate_total()
